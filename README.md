@@ -14,6 +14,7 @@ for obj in obj_list:
 ra = [c.ra.value for c in coords]
 dec = [c.dec.value for c in coords]
 
-ov = ObjVisibility(date_obs="2021-4-10", location="spm", ra=ra, dec=dec, names=obj_list, saveFig=True, formatFig="eps")
-ov.staralt()
+ov = ObjVisibility(date_obs="2021-4-10", location="spm")
+ov.staralt(ra=ra, dec=dec, names=obj_list, add_moon=True)
+ov.savePlot(show=False, formatFig="pdf")
 ```
