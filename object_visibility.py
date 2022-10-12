@@ -22,17 +22,6 @@ class ObjVisibility(object):
             Date in which the observations will take place.
     location: str
             Observatory location. One of those listed in astropy.coordinates.EarthLocation.get_site_names().
-    ra: float or list of floats
-            Right Ascension (J2000, ICRS)
-    dec: float or list of floats
-            Declination (J2000, ICRS)
-    names: str or list of str
-            Name of the objects.
-    saveFig: bool (optional; default: True)
-            If True the program will save the figure.
-    formatFig: str (optinal; default: pdf)
-            Output format of the figure. One of the matplotlib supported formats.
-
     Methods
     -------
     staralt()
@@ -49,17 +38,6 @@ class ObjVisibility(object):
                         Date in which the observations will take place.
                 location: str
                         Observatory location. One of those listed in astropy.coordinates.EarthLocation.get_site_names().
-                ra: float or list of floats
-                        Right Ascension (J2000, ICRS)
-                dec: float or list of floats
-                        Declination (J2000, ICRS)
-                names: str or list of str
-                        Name of the objects.
-                saveFig: bool (optional; default: True)
-                        If True the program will save the figure.
-                formatFig: str (optinal; default: pdf)
-                        Output format of the figure. One of the matplotlib supported formats.
-
         Returns
         -------
                 None.
