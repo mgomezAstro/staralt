@@ -1,0 +1,32 @@
+# debug_staralt_imports.py
+import traceback
+import importlib
+
+# List of modules to check within staralt
+modules_to_check = [
+    "staralt",
+    "staralt.plot_altitude",
+    "staralt.plot_horizon",
+    "staralt.observatory",
+    "staralt.utils",
+    "staralt.objects"
+]
+
+def test_import(module_name):
+    try:
+        print(f"Trying to import {module_name}...")
+        importlib.import_module(module_name)
+        print(f"✅ Successfully imported {module_name}")
+    except Exception as e:
+        print(f"❌ Failed to import {module_name}")
+        traceback.print_exc()
+    except SystemExit as e:
+        print(f"⚠️ Module {module_name} exited the interpreter: {e}")
+    except BaseException as e:
+        # Catch things like segfaults (this may still not catch actual C-level segfaults)
+        print(f"🔥 Unexpected crash during {module_name}")
+        traceback.print_exc()
+
+if __name__ == "__main__":
+    for mod in modules_to_check:
+        test_import(mod)
